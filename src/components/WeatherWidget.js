@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, TextField, Button, Card, Chip } from "@material-ui/core";
+import { Grid, Card, Chip } from "@material-ui/core";
 import Cloudy from "../assets/img/cloudy.png";
 import "../assets/css/weather.css";
 import { Navigation } from "@material-ui/icons";

@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../assets/img/logo.png";
 import "../assets/css/subscription.css";
 import { Grid, TextField, Button } from "@material-ui/core";
+import Footer from "../components/Footer";
 
 const Subscription = () => {
   return (
@@ -24,14 +25,14 @@ const Subscription = () => {
       </Grid>
       <Grid container>
         <Grid item xs={12} className="subscribe-form-title">
-          Login Information
+          Subscribe to our newsletter
         </Grid>
       </Grid>
       <Grid container>
         <Grid item xs={12} style={{ marginTop: "20px", padding: "10px" }}>
           <TextField
             id="outlined-basic"
-            label="Username"
+            label="Name"
             variant="outlined"
             style={{ width: "100%" }}
           />
@@ -54,6 +55,7 @@ const Subscription = () => {
           </Button>
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 };

@@ -1,24 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import Subscription from "./page/Subscription";
+import Home from "./page/Home";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import Login from "./page/Login";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#A9F445",
+      main: "#7CB92A",
+      dark: "#6D9D2D",
+      contrastText: "#fff",
+    },
+  },
+});
+
+const ProtectedRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      localStorage.getItem("access_token") ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/login" />
+      )
+    }
+  />
+);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <ScrollToTop>
+          <ThemeProvider theme={theme}>
+            <Switch>
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/subscription" component={Subscription} />
+              <ProtectedRoute path="/" component={Home} />
+            </Switch>
+          </ThemeProvider>
+        </ScrollToTop>
+      </Router>
     </div>
   );
 }

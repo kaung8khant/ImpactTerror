@@ -1,0 +1,20 @@
+.login-header {
+  padding-top: 40px;
+  height: 50vh;
+  background: #7cb92a;
+}
+.brand {
+  margin-top: 10px;
+  font-size: 30px;
+  color: white;
+}
+.login-content {
+  padding: 40px 30px 0px 30px;
+  box-shadow: 0px -10px 18px #699e22;
+  height: 50vh;
+}
+.login-form-title {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 20px !important;
+}

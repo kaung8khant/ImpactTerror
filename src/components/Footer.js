@@ -27,7 +27,7 @@ const Footer = () => {
           <RssFeed color={pathname === "/subscription" ? "primary" : ""} />
           <div>
             <Typography color={pathname === "/subscription" ? "primary" : ""}>
-              Home
+              Subscribe
             </Typography>
           </div>
         </Link>

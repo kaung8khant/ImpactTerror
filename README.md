@@ -4,7 +4,7 @@
 
 ### `test123`
 
-In the project directory, you can run:
+## Run Script
 
 ### `npm install`
 
